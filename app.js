@@ -11,7 +11,8 @@ console.log('Before');
 
 getUser(1)
     .then(user => getRepositories(user.gitHubUsername))
-    .then(repos => console.log("Repos", repos));
+    .then(repos => console.log("Repos", repos))
+    .catch(err => console.log('Error', err.mesage));
 
 
 //We add another parameter callback to getUserid.A callback is a function that we are 

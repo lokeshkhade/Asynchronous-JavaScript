@@ -1,13 +1,17 @@
 console.log('Before');
 
-getUser(1, function (user) {
-    console.log('User', user);
-    getRepositories(user.gitHubUsername, function (repos) {
-        console.log('Repos', repos);
-    })
-});
+// getUser(1, function (user) {
+//     console.log('User', user);
+//     getRepositories(user.gitHubUsername, function (repos) {
+//         console.log('Repos', repos);
+//     })
+// });
 
-console.log('After');
+
+
+getUser(1)
+    .then(user => getRepositories(user.gitHubUsername))
+    .then(repos => console.log("Repos", repos));
 
 
 //We add another parameter callback to getUserid.A callback is a function that we are 
